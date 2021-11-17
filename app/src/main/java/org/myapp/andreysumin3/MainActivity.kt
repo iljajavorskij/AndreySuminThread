@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
     private fun loadCity(callback:(String) -> Unit){
         thread {
             Thread.sleep(5000)
-            runOnUiThread {
+            runOnUiThread {//запустить на главном потоке(под капотом использует Хэндлер (проверяет если текущий поток не равен главному то вызывает hendler.post(action)
                 callback.invoke("Moscow")
             }
 
